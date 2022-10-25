@@ -1,5 +1,7 @@
 # prometheus-gitlab-license-exporter
 
+![ci](https://github.com/szevez/prometheus-gitlab-license-exporter/actions/workflows/ci.yml/badge.svg)
+
 ## Requirements
 
 - GitLab API Token (to interact with license endpoints, you need to authenticate
