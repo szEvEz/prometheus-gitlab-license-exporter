@@ -20,6 +20,16 @@ yourself as an administrator, `read_api` is sufficient)
 | gitlab_license_starts_at          | Date the license starts at                                                           |
 | gitlab_license_user_limit         | The number of users the license is licensed for                                      |
 
+## Docker
+
+```shell
+$ docker pull szevez/prometheus-gitlab-license-exporter:latest
+$ docker run -p 9191:9191 \
+    -e GITLAB_TOKEN=YOURTOKEN \
+    -e GITLAB_URL=https://YOURURL \
+    szevez/prometheus-gitlab-license-exporter:latest
+```
+
 ## Local Development
 
 - Requires go >= 1.18
@@ -31,15 +41,3 @@ $ go run main.go
 ```
 
 Access exporter at `localhost:9191/metrics`
-
-## Image
-
-```sh
-$ docker build -t prometheus-gitlab-license-exporter:latest .
-$ docker run -p 9191:9191 \
-  -e GITLAB_TOKEN=YOURTOKEN \
-  -e GITLAB_URL=https://YOURURL \
-  prometheus-gitlab-license-exporter:latest
-```
-
-
