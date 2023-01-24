@@ -26,6 +26,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: |
-            szevez/prometheus-gitlab-license-exporter:${{ github.ref_name }}"
-            szevez/prometheus-gitlab-license-exporter:latest
+          tags: szevez/prometheus-gitlab-license-exporter:${{ github.ref_name }}"
