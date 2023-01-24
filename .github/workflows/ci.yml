@@ -2,8 +2,8 @@ name: ci
 
 on:
   push:
-    branches:
-      - 'main'
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   docker:
@@ -26,4 +26,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: szevez/prometheus-gitlab-license-exporter:latest
+          tags: |
+            szevez/prometheus-gitlab-license-exporter:${{ steps.vars.outputs.tag }}
+            szevez/prometheus-gitlab-license-exporter:latest
