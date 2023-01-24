@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v*.*.*'
 
 jobs:
   docker:
@@ -27,5 +27,5 @@ jobs:
         with:
           push: true
           tags: |
-            szevez/prometheus-gitlab-license-exporter:${{ steps.vars.outputs.tag }}
+            szevez/prometheus-gitlab-license-exporter:${{ github.ref_name }}"
             szevez/prometheus-gitlab-license-exporter:latest
