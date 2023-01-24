@@ -28,4 +28,4 @@ jobs:
           push: true
           tags: |
             szevez/prometheus-gitlab-license-exporter:latest
-            szevez/prometheus-gitlab-license-exporter:${{ GITHUB_REF_NAME }}
+            szevez/prometheus-gitlab-license-exporter:${{ env.GITHUB_REF_NAME }}
